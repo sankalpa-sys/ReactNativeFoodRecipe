@@ -1,8 +1,11 @@
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import Icon from "react-native-vector-icons/Ionicons";
 import {SmallButtonComponent} from "../../reusable/SmallButtonComponent";
+import {getARandomUser} from "../../utils";
+import {useNavigation} from "@react-navigation/native";
 const RecipeDetails = ({recipe}) => {
     const {container, titleContainer, titleText, reviewText, profileImage, mainDetailsContainer, leftContainer, nameAndAddressContainer,nameText,addressContainer,addressText } = styles;
+    const navigation = useNavigation();
     return (
         <View style={container}>
            <View style={titleContainer}>
@@ -10,16 +13,16 @@ const RecipeDetails = ({recipe}) => {
                <Text style={reviewText}>(13k reviews)</Text>
            </View>
             <View style={mainDetailsContainer}>
-                <View style={leftContainer}>
+                <TouchableOpacity onPress={()=>navigation.navigate("Profile")} style={leftContainer}>
                     <Image style={profileImage} source={{uri: "https://images.pexels.com/photos/5372800/pexels-photo-5372800.jpeg?auto=compress&cs=tinysrgb&w=800"}}/>
                     <View style={nameAndAddressContainer}>
-                        <Text style={nameText}>By Sankalpa</Text>
+                        <Text style={nameText}>By {getARandomUser().name}</Text>
                         <View style={addressContainer}>
                             <Icon name='location' color='#129575' size={14}/>
                             <Text style={addressText}>Kathmandu, Nepal</Text>
                         </View>
                     </View>
-                </View>
+                </TouchableOpacity>
                     <SmallButtonComponent title='Follow'/>
             </View>
         </View>
@@ -67,6 +70,7 @@ const styles = StyleSheet.create({
     nameText: {
         fontSize: 14,
         fontWeight: '600',
+        paddingLeft: 2,
     },
     addressContainer: {
         flexDirection: 'row',

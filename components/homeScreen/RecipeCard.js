@@ -1,7 +1,7 @@
 import {View, Text, StyleSheet, Image, TouchableOpacity} from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import {useNavigation} from "@react-navigation/native";
-import {getARandomRating} from "../../utils";
+import {getARandomRating, getARandomUser} from "../../utils";
 
 const RecipeCard = ({item}) => {
     const navigation = useNavigation();
@@ -14,12 +14,12 @@ const RecipeCard = ({item}) => {
                     <Image source={{uri: item?.strMealThumb}} style={image}/>
                     <View style={overlay}>
                         <View style={ratingDiv}>
-                            <Icon name='star' color='orange' size={14}/>
+                            <Icon name='star' color='orange' size={8}/>
                             <Text style={text}>{getARandomRating()}.0</Text>
                         </View>
                             <View style={textContainer}>
                                 <Text style={name}>{item?.strMeal}</Text>
-                                <Text style={chef}>By John Cena</Text>
+                                <Text style={chef}>By {getARandomUser().name}</Text>
                             </View>
                     </View>
                 </View>
@@ -68,17 +68,22 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         gap: 5,
+        backgroundColor: '#FFE1B3',
+        paddingHorizontal: 5,
+        paddingVertical: 3,
+        borderRadius: 10,
     },
     text: {
         textAlign: 'center',
-        color: 'white',
+        color: 'black',
+        fontSize: 8,
     },
     name: {
         color: 'white',
     },
     chef: {
         color: 'white',
-        fontSize: 12,
+        fontSize: 8,
         paddingTop: 5,
     }
 })

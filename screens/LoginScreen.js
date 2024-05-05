@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     forgotPassword: {
         textAlign: 'right',
         marginTop: 10,
-        color: '#129575'
+        color: '#FF9C00'
     },
     dontHaveAccount: {
         textAlign: 'center',
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
         color: 'black'
     },
     signup: {
-        color: '#129575',
+        color: '#FF9C00',
         fontWeight: 600
     }
 })

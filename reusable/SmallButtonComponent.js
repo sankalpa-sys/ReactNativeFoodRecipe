@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 11,
         textAlign: 'center',
-        fontWeight: 600,
+        fontWeight: "bold",
     },
     buttonInactive: {
         backgroundColor: 'transparent',
@@ -40,6 +40,6 @@ const styles = StyleSheet.create({
         color: '#129575',
         fontSize: 11,
         textAlign: 'center',
-        fontWeight: 600,
+        fontWeight: "bold",
     }
 })
