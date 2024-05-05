@@ -32,7 +32,7 @@ const Ingredients = ({recipe}) => {
     return (
         <View style={container}>
             {ingredients.map((item, index)=>(
-                <IngredientCard key={item.ingredient} item={item}/>
+                <IngredientCard key={index} item={item}/>
             ))}
         </View>
     )
