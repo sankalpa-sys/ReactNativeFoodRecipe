@@ -3,6 +3,7 @@ import {SafeAreaView} from "react-native-safe-area-context";
 import ProfileHeader from "../components/profileScreen/ProfileHeader";
 import ProfileDetailsTop from "../components/profileScreen/ProfileDetails";
 import ButtonRow from "../components/profileScreen/ButtonRow";
+import ChefRecipes from "../components/profileScreen/ChefRecipes";
 const ProfileScreen = () => {
     const {container} = styles;
     return (
@@ -11,6 +12,7 @@ const ProfileScreen = () => {
                <ProfileHeader/>
                 <ProfileDetailsTop/>
                 <ButtonRow/>
+                <ChefRecipes/>
             </SafeAreaView>
         </ScrollView>
     )

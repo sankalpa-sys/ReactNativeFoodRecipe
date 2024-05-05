@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     greetingSub: {
-        fontSize: 16,
+        fontSize: 11,
         fontWeight: '400',
         marginTop: 10,
         color:"#A9A9A9"

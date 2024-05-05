@@ -1,14 +1,14 @@
 
 import {View, Text, Image, StyleSheet} from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
-import {getARandomRating} from "../../utils";
+import {getARandomRating, getARandomUser} from "../../utils";
 
-const Banner = ({recipe}) => {
-    const {overlay, ratingDiv, text, ratingText,timeText, timeContainer, saveIconDiv, bottomRightDiv} = styles;
+const Banner = ({recipe, showNames = false}) => {
+    const {overlay, ratingDiv, ratingText,timeText, timeContainer, saveIconDiv, bottomRightDiv, bottomLeftDiv, foodName, chefName} = styles;
     return (
         <View>
             <Image source={{uri: recipe?.strMealThumb}} style={styles.image} />
-            <View style={styles.overlay}>
+            <View style={overlay}>
                 <View style={ratingDiv}>
                     <Icon name='star' color='orange' size={14}/>
                     <Text style={ratingText}>{getARandomRating()}.0</Text>
@@ -22,6 +22,12 @@ const Banner = ({recipe}) => {
                         <Icon name='bookmark-outline' color='black' size={16}/>
                     </View>
                 </View>
+                {showNames && (
+                    <View style={bottomLeftDiv}>
+                        <Text style={foodName}>{recipe?.strMeal}</Text>
+                        <Text style={chefName}>By {getARandomUser().name}</Text>
+                    </View>
+                )}
             </View>
         </View>
     )
@@ -82,6 +88,21 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 10,
         right: 10
+    },
+bottomLeftDiv: {
+        position: 'absolute',
+        bottom: 10,
+        left: 10
+    },
+    foodName: {
+        color: 'white',
+        fontSize: 14,
+        fontWeight: 'bold',
+        width: 200
+    },
+    chefName: {
+        color: 'white',
+        fontSize: 8
     }
 })
 export default Banner;

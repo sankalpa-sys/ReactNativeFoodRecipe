@@ -2,7 +2,7 @@ import {ActivityIndicator} from "react-native";
 
 const LoadingSpinner = () => {
     return(
-        <ActivityIndicator size='large' color='#129575'/>
+        <ActivityIndicator color='#129575'/>
     )
 }
 

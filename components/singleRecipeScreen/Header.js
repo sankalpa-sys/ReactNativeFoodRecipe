@@ -7,10 +7,10 @@ const Header = () => {
     const navigation = useNavigation();
     return (
         <View style={container}>
-            <TouchableOpacity onPress={()=>navigation.goBack()} style={backContainer}>
-                <Icon size={16} style={{color: "white"}} name="arrow-back-outline" />
+            <TouchableOpacity onPress={()=>navigation.goBack()}>
+                <Icon size={24} style={{color: "#000000"}} name="arrow-back-outline" />
             </TouchableOpacity>
-            <Icon size={20} style={{color: "gray"}} name="ellipsis-horizontal-outline" />
+            <Icon size={24} style={{color: "#000000"}} name="ellipsis-horizontal-outline" />
         </View>
     )
 }
