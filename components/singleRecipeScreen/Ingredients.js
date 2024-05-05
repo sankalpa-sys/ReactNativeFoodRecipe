@@ -27,7 +27,6 @@ const Ingredients = ({recipe}) => {
         return ingredients;
     };
     const ingredients = createIngredientData();
-    console.log("ingredients", ingredients);
     const {container} = styles;
     return (
         <View style={container}>

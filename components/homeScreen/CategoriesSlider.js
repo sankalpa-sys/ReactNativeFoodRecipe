@@ -23,7 +23,7 @@ const CategoriesSlider = () => {
         <View>
             <ScrollView horizontal showsHorizontalScrollIndicator={false} style={container}>
                 {allCategories.map((category, index) => (
-                    <TouchableOpacity onPress={()=>handleChangeActive(category)} style={category.name === selectedCategory ? textContainer: textContainerInActive}>
+                    <TouchableOpacity key={index} onPress={()=>handleChangeActive(category)} style={category.name === selectedCategory ? textContainer: textContainerInActive}>
                         <Text style={category.name === selectedCategory ? categoryText: categoryTextInactive} key={index}>{category.name}</Text>
                     </TouchableOpacity>
                 ))}
