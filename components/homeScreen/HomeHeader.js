@@ -1,13 +1,17 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {useNavigation} from "@react-navigation/native";
 const HomeHeader = () => {
     const {greeting, greetContainer, greetingSub, profile} = styles;
+    const navigation = useNavigation();
     return (
         <View style={greetContainer}>
             <View>
                 <Text style={greeting}>Hello Sankalpa</Text>
                 <Text style={greetingSub}>What are you cooking today?</Text>
             </View>
-            <Image style={profile} source={{uri: "https://images.pexels.com/photos/5372800/pexels-photo-5372800.jpeg?auto=compress&cs=tinysrgb&w=800"}}/>
+            <TouchableOpacity onPress={()=>navigation.navigate("Profile")}>
+                <Image style={profile} source={{uri: "https://images.pexels.com/photos/5372800/pexels-photo-5372800.jpeg?auto=compress&cs=tinysrgb&w=800"}}/>
+            </TouchableOpacity>
         </View>
     )
 }
@@ -15,6 +19,7 @@ const HomeHeader = () => {
 const styles = StyleSheet.create({
     greetContainer: {
         flexDirection: 'row',
+        justifyContent: 'space-between',
     },
     greeting: {
         fontSize: 20,
