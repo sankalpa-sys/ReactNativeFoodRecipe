@@ -1,4 +1,5 @@
 import { View, Text, StyleSheet, Image } from 'react-native';
+import {getARandomUser} from "../../utils";
 
 const details = [
     {
@@ -30,7 +31,7 @@ const DefaultComponent = () => {
                     ))}
                 </View>
             </View>
-            <Text style={name}>Sankalpa Neupane</Text>
+            <Text style={name}>{getARandomUser().name}</Text>
             <Text style={desc}>Chef</Text>
 
             <View style={subDescContainer}>

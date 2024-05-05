@@ -1,10 +1,16 @@
 
-import {View, Text, Image, StyleSheet} from "react-native";
+import {View, Text, Image, StyleSheet, TouchableOpacity} from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 import {getARandomRating, getARandomUser} from "../../utils";
+import {useSavedRecipeContext} from "../../context/useSavedRecipe";
 
 const Banner = ({recipe, showNames = false}) => {
-    const {overlay, ratingDiv, ratingText,timeText, timeContainer, saveIconDiv, bottomRightDiv, bottomLeftDiv, foodName, chefName} = styles;
+    const {recipes, saveRecipe} = useSavedRecipeContext()
+    const isSaved = recipes.find((item) => item.idMeal === recipe.idMeal)
+    const handleSave = () => {
+        saveRecipe(recipe)
+    }
+    const {overlay, ratingDiv, ratingText,timeText, timeContainer, saveIconDiv, bottomRightDiv, bottomLeftDiv, foodName, chefName, notSaved} = styles;
     return (
         <View>
             <Image source={{uri: recipe?.strMealThumb}} style={styles.image} />
@@ -18,9 +24,9 @@ const Banner = ({recipe, showNames = false}) => {
                         <Icon name='alarm-outline' color='#D9D9D9' size={17}/>
                         <Text style={timeText}>30 mins</Text>
                     </View>
-                    <View style={saveIconDiv}>
-                        <Icon name='bookmark-outline' color='black' size={16}/>
-                    </View>
+                    <TouchableOpacity onPress={handleSave} style={isSaved? saveIconDiv: notSaved}>
+                        <Icon name='bookmark-outline' color={isSaved ? "black": "white"} size={16}/>
+                    </TouchableOpacity>
                 </View>
                 {showNames && (
                     <View style={bottomLeftDiv}>
@@ -79,6 +85,12 @@ const styles = StyleSheet.create({
     },
     saveIconDiv: {
         backgroundColor: 'white',
+        padding: 5,
+        borderRadius: 10,
+        marginLeft: 10
+    },
+    notSaved: {
+        backgroundColor: 'transparent',
         padding: 5,
         borderRadius: 10,
         marginLeft: 10
