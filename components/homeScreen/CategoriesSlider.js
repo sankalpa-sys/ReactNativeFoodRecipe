@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         borderRadius: 10,
         marginHorizontal: 5,
+        backgroundColor: '#F5F5F5',
     },
     categoryTextInactive: {
         color: '#129575',
