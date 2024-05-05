@@ -3,9 +3,13 @@ import {useGetAllRecipe} from "../../hooks/Recipe/useGetAllRecipee";
 import LoadingSpinner from "../../reusable/LoadingSpinner";
 import Error from "../../reusable/Error";
 import Banner from "../singleRecipeScreen/Banner";
+import withTouchableOpacity from "../../hoc/withTouchableOpacity";
+import {useNavigation} from "@react-navigation/native";
 const ChefRecipes = () => {
+    const navigation = useNavigation();
     const {recipe, loading, error} = useGetAllRecipe();
     const {container} = styles;
+    const BannerWithRoute = withTouchableOpacity(Banner);
     if(loading) return(
         <View style={{flex: 1, alignItems: "center", justifyContent: "center", paddingVertical: 20}}>
             <LoadingSpinner/>
@@ -19,7 +23,7 @@ const ChefRecipes = () => {
     return (
         <View style={container}>
             {recipe.slice(5,15).map((item, index)=> (
-                <Banner showNames={true} key={index} recipe={item}/>
+                <BannerWithRoute onPress={()=>navigation.navigate("Recipe", {recipe: item})} showNames={true} key={index} recipe={item}/>
             ))}
         </View>
     )

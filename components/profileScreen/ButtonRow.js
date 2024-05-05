@@ -1,17 +1,14 @@
 import { View, Text, StyleSheet } from 'react-native';
 import {SmallButtonComponent} from "../../reusable/SmallButtonComponent";
-const ButtonRow = () => {
+const ButtonRow = ({recipeType, handleRecipeType}) => {
     const {container, btnDiv} = styles;
     return (
         <View style={container}>
            <View style={btnDiv}>
-               <SmallButtonComponent title="Recipe" />
+               <SmallButtonComponent active={recipeType === "Owned"} onPress={()=>handleRecipeType("Owned")} title="Owned" />
            </View>
             <View style={btnDiv}>
-                <SmallButtonComponent active={false} title="Videos" />
-            </View>
-            <View style={btnDiv}>
-                <SmallButtonComponent active={false} title="Tag" />
+                <SmallButtonComponent active={recipeType === "Saved"} onPress={()=>handleRecipeType("Saved")} title="Saved" />
             </View>
         </View>
     )

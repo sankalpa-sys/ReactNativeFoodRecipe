@@ -1,12 +1,13 @@
 import {Image, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import {useNavigation} from "@react-navigation/native";
+import {getARandomUser} from "../../utils";
 const HomeHeader = () => {
     const {greeting, greetContainer, greetingSub, profile} = styles;
     const navigation = useNavigation();
     return (
         <View style={greetContainer}>
             <View>
-                <Text style={greeting}>Hello Sankalpa</Text>
+                <Text style={greeting}>Hello {getARandomUser().name}!</Text>
                 <Text style={greetingSub}>What are you cooking today?</Text>
             </View>
             <TouchableOpacity onPress={()=>navigation.navigate("Profile")}>
