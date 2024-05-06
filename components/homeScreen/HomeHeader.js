@@ -11,7 +11,7 @@ const HomeHeader = () => {
                 <Text style={greetingSub}>What are you cooking today?</Text>
             </View>
             <TouchableOpacity onPress={()=>navigation.navigate("Profile")}>
-                <Image style={profile} source={{uri: "https://images.pexels.com/photos/5372800/pexels-photo-5372800.jpeg?auto=compress&cs=tinysrgb&w=800"}}/>
+                <Image style={profile} source={{uri: "https://images.pexels.com/photos/1036627/pexels-photo-1036627.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"}}/>
             </TouchableOpacity>
         </View>
     )
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
         height: 40,
         borderRadius: 25,
         marginLeft: 'auto',
-        objectFit: "contain",
+        objectFit: "cover",
         backgroundColor: 'grey'
     }
 })

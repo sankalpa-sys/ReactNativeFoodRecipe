@@ -230,3 +230,283 @@ export const users = [
         }
     }
 ]
+
+
+export const addresses =
+    [
+        {
+            "address1": "1745 T Street Southeast",
+            "address2": "",
+            "city": "Washington",
+            "state": "DC",
+            "postalCode": "20020",
+            "coordinates": {
+                "lat": 38.867033,
+                "lng": -76.979235
+            }
+        },
+        {
+            "address1": "6007 Applegate Lane",
+            "address2": "",
+            "city": "Louisville",
+            "state": "KY",
+            "postalCode": "40219",
+            "coordinates": {
+                "lat": 38.1343013,
+                "lng": -85.6498512
+            }
+        },
+        {
+            "address1": "560 Penstock Drive",
+            "address2": "",
+            "city": "Grass Valley",
+            "state": "CA",
+            "postalCode": "95945",
+            "coordinates": {
+                "lat": 39.213076,
+                "lng": -121.077583
+            }
+        },
+        {
+            "address1": "150 Carter Street",
+            "address2": "",
+            "city": "Manchester",
+            "state": "CT",
+            "postalCode": "06040",
+            "coordinates": {
+                "lat": 41.76556000000001,
+                "lng": -72.473091
+            }
+        },
+        {
+            "address1": "2721 Lindsay Avenue",
+            "address2": "",
+            "city": "Louisville",
+            "state": "KY",
+            "postalCode": "40206",
+            "coordinates": {
+                "lat": 38.263793,
+                "lng": -85.700243
+            }
+        },
+        {
+            "address1": "18 Densmore Drive",
+            "address2": "",
+            "city": "Essex",
+            "state": "VT",
+            "postalCode": "05452",
+            "coordinates": {
+                "lat": 44.492953,
+                "lng": -73.101883
+            }
+        },
+        {
+            "address1": "637 Britannia Drive",
+            "address2": "",
+            "city": "Vallejo",
+            "state": "CA",
+            "postalCode": "94591",
+            "coordinates": {
+                "lat": 38.10476999999999,
+                "lng": -122.193849
+            }
+        },
+        {
+            "address1": "5601 West Crocus Drive",
+            "address2": "",
+            "city": "Glendale",
+            "state": "AZ",
+            "postalCode": "85306",
+            "coordinates": {
+                "lat": 33.6152469,
+                "lng": -112.179737
+            }
+        },
+        {
+            "address1": "5403 Illinois Avenue",
+            "address2": "",
+            "city": "Nashville",
+            "state": "TN",
+            "postalCode": "37209",
+            "coordinates": {
+                "lat": 36.157077,
+                "lng": -86.853827
+            }
+        },
+        {
+            "address1": "8821 West Myrtle Avenue",
+            "address2": "",
+            "city": "Glendale",
+            "state": "AZ",
+            "postalCode": "85305",
+            "coordinates": {
+                "lat": 33.5404296,
+                "lng": -112.2488391
+            }
+        },
+        {
+            "address1": "2203 7th Street Road",
+            "address2": "",
+            "city": "Louisville",
+            "state": "KY",
+            "postalCode": "40208",
+            "coordinates": {
+                "lat": 38.218107,
+                "lng": -85.779006
+            }
+        },
+        {
+            "address1": "6463 Vrain Street",
+            "address2": "",
+            "city": "Arvada",
+            "state": "CO",
+            "postalCode": "80003",
+            "coordinates": {
+                "lat": 39.814056,
+                "lng": -105.046913
+            }
+        },
+        {
+            "address1": "87 Horseshoe Drive",
+            "address2": "",
+            "city": "West Windsor",
+            "state": "VT",
+            "postalCode": "05037",
+            "coordinates": {
+                "lat": 43.4731793,
+                "lng": -72.4967532
+            }
+        },
+        {
+            "address1": "60 Desousa Drive",
+            "address2": "",
+            "city": "Manchester",
+            "state": "CT",
+            "postalCode": "06040",
+            "coordinates": {
+                "lat": 41.7409259,
+                "lng": -72.5619104
+            }
+        },
+        {
+            "address1": "4 Old Colony Way",
+            "address2": "",
+            "city": "Yarmouth",
+            "state": "MA",
+            "postalCode": "02664",
+            "coordinates": {
+                "lat": 41.697168,
+                "lng": -70.189992
+            }
+        },
+        {
+            "address1": "314 South 17th Street",
+            "address2": "",
+            "city": "Nashville",
+            "state": "TN",
+            "postalCode": "37206",
+            "coordinates": {
+                "lat": 36.1719075,
+                "lng": -86.740228
+            }
+        },
+        {
+            "address1": "1649 Timberridge Court",
+            "address2": "",
+            "city": "Fayetteville",
+            "state": "AR",
+            "postalCode": "72704",
+            "coordinates": {
+                "lat": 36.084563,
+                "lng": -94.206082
+            }
+        },
+        {
+            "address1": "5461 West Shades Valley Drive",
+            "address2": "",
+            "city": "Montgomery",
+            "state": "AL",
+            "postalCode": "36108",
+            "coordinates": {
+                "lat": 32.296422,
+                "lng": -86.34280299999999
+            }
+        },
+        {
+            "address1": "629 Debbie Drive",
+            "address2": "",
+            "city": "Nashville",
+            "state": "TN",
+            "postalCode": "37076",
+            "coordinates": {
+                "lat": 36.208114,
+                "lng": -86.58621199999999
+            }
+        },
+        {
+            "address1": "22572 Toreador Drive",
+            "address2": "",
+            "city": "Salinas",
+            "state": "CA",
+            "postalCode": "93908",
+            "coordinates": {
+                "lat": 36.602449,
+                "lng": -121.699071
+            }
+        },
+        {
+            "address1": "3034 Mica Street",
+            "address2": "",
+            "city": "Fayetteville",
+            "state": "AR",
+            "postalCode": "72704",
+            "coordinates": {
+                "lat": 36.0807929,
+                "lng": -94.2066449
+            }
+        },
+        {
+            "address1": "3729 East Mission Boulevard",
+            "address2": "",
+            "city": "Fayetteville",
+            "state": "AR",
+            "postalCode": "72703",
+            "coordinates": {
+                "lat": 36.0919353,
+                "lng": -94.10654219999999
+            }
+        },
+        {
+            "address1": "5114 Greentree Drive",
+            "address2": "",
+            "city": "Nashville",
+            "state": "TN",
+            "postalCode": "37211",
+            "coordinates": {
+                "lat": 36.0618539,
+                "lng": -86.738508
+            }
+        },
+        {
+            "address1": "3466 Southview Avenue",
+            "address2": "",
+            "city": "Montgomery",
+            "state": "AL",
+            "postalCode": "36111",
+            "coordinates": {
+                "lat": 32.341227,
+                "lng": -86.2846859
+            }
+        },
+        {
+            "address1": "1513 Cathy Street",
+            "address2": "",
+            "city": "Savannah",
+            "state": "GA",
+            "postalCode": "31415",
+            "coordinates": {
+                "lat": 32.067416,
+                "lng": -81.125331
+            }
+        },
+]

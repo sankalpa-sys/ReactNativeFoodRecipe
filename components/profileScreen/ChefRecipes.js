@@ -11,7 +11,7 @@ const ChefRecipes = () => {
     const {container} = styles;
     const BannerWithRoute = withTouchableOpacity(Banner);
     if(loading) return(
-        <View style={{flex: 1, alignItems: "center", justifyContent: "center", paddingVertical: 20}}>
+        <View style={{flex: 1, alignItems: "center", justifyContent: "center", paddingVertical: 50}}>
             <LoadingSpinner/>
         </View>
     )

@@ -29,19 +29,25 @@ export default function App() {
     };
     console.log("savedRecipes", savedRecipes)
   return (
-      <SavedRecipeContext.Provider value={{ savedRecipes, saveRecipe }}>
-          <NavigationContainer>
-              <Stack.Navigator>
-                  <Stack.Screen options={{headerShown: false}} name="Landing" component={LandingScreen} />
-                  <Stack.Screen options={{headerShown: false}} name="Home" component={HomeScreen} />
-                  <Stack.Screen options={{headerShown: false}} name="Login" component={LoginScreen} />
-                  <Stack.Screen options={{headerShown: false}} name="Recipe" component={SingleRecipeDetailsScreen} />
-                  <Stack.Screen options={{headerShown: false}} name="Profile" component={ProfileScreen} />
-              </Stack.Navigator>
-          </NavigationContainer>
-      </SavedRecipeContext.Provider>
+      <View style={styles.container}>
+          <SavedRecipeContext.Provider value={{ savedRecipes, saveRecipe }}>
+              <NavigationContainer>
+                  <Stack.Navigator>
+                      <Stack.Screen options={{headerShown: false}} name="Landing" component={LandingScreen} />
+                      <Stack.Screen options={{headerShown: false}} name="Home" component={HomeScreen} />
+                      <Stack.Screen options={{headerShown: false}} name="Login" component={LoginScreen} />
+                      <Stack.Screen options={{headerShown: false}} name="Recipe" component={SingleRecipeDetailsScreen} />
+                      <Stack.Screen options={{headerShown: false}} name="Profile" component={ProfileScreen} />
+                  </Stack.Navigator>
+              </NavigationContainer>
+          </SavedRecipeContext.Provider>
+      </View>
   );
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+    },
 });

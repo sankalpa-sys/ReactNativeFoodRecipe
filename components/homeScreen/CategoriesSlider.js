@@ -35,7 +35,7 @@ const CategoriesSlider = () => {
 
 const styles = StyleSheet.create({
     container: {
-        marginVertical: 20,
+        marginTop: 20,
     },
     textContainer: {
         paddingVertical: 10,

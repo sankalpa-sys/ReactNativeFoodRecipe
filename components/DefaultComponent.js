@@ -13,3 +13,6 @@ const styles = StyleSheet.create({});
 
 
 export default DefaultComponent;
+
+
+// color: "#129575",

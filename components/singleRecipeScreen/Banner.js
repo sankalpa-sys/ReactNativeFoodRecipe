@@ -42,13 +42,14 @@ const Banner = ({recipe, showNames = false}) => {
 const styles = StyleSheet.create({
     image: {
         width: '100%',
-        height: 200,
+        height: 150,
         borderRadius: 10,
+        objectFit: 'cover'
     },
     overlay: {
         position: 'absolute',
         width: '100%',
-        height: 200,
+        height: 150,
         backgroundColor: 'rgba(0, 0, 0, 0.5)',
         justifyContent: 'center',
         alignItems: 'center',
