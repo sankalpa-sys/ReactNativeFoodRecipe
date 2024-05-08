@@ -2,13 +2,13 @@ import {View, Text, TextInput} from "react-native";
 import {StyleSheet} from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 
-const HomeSearch = () => {
+const HomeSearch = ({search, searchQuery}) => {
     const {container, searchContainer, searchIcon,filterContainer, slidersIcon} = styles;
     return (
         <View style={container}>
            <View style={searchContainer}>
                <Icon style={searchIcon} name="search" />
-               <TextInput placeholder='Search recipe'/>
+               <TextInput onChangeText={text => search(text)}  value={searchQuery} placeholder='Search recipe'/>
            </View>
             <View style={filterContainer}>
                 <Icon style={slidersIcon} name="sliders" />
