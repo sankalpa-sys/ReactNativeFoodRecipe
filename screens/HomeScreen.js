@@ -1,4 +1,4 @@
-import {StyleSheet} from "react-native";
+import {StyleSheet, AsyncStorage} from "react-native";
 import {SafeAreaView} from "react-native-safe-area-context";
 import HomeHeader from "../components/homeScreen/HomeHeader";
 import HomeSearch from "../components/homeScreen/HomeSearch";
