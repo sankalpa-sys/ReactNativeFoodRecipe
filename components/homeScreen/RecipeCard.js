@@ -2,14 +2,15 @@ import {View, Text, StyleSheet, Image, TouchableOpacity} from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import {useNavigation} from "@react-navigation/native";
 import {getARandomRating, getARandomUser} from "../../utils";
+import React from "react";
 
-const RecipeCard = ({item}) => {
-    const navigation = useNavigation();
-    const {container, imageContainer, image, textContainer, text, overlay, ratingDiv, name, chef} = styles;
-    return (
-        <TouchableOpacity onPress={()=>navigation.navigate('Recipe', {
-            recipe: item
-        })} style={container}>
+const RecipeCard = React.memo(({item}) => {
+        const navigation = useNavigation();
+        const {container, imageContainer, image, textContainer, text, overlay, ratingDiv, name, chef} = styles;
+        return (
+            <TouchableOpacity onPress={()=>navigation.navigate('Recipe', {
+                recipe: item
+            })} style={container}>
                 <View style={imageContainer}>
                     <Image source={{uri: item?.strMealThumb}} style={image}/>
                     <View style={overlay}>
@@ -17,17 +18,18 @@ const RecipeCard = ({item}) => {
                             <Icon name='star' color='orange' size={8}/>
                             <Text style={text}>{getARandomRating()}.0</Text>
                         </View>
-                            <View style={textContainer}>
-                                <Text style={name}>{item?.strMeal}</Text>
-                                <Text style={chef}>By {getARandomUser().name}</Text>
-                            </View>
+                        <View style={textContainer}>
+                            <Text style={name}>{item?.strMeal}</Text>
+                            <Text style={chef}>By {getARandomUser().name}</Text>
+                        </View>
                     </View>
                 </View>
 
 
-        </TouchableOpacity>
-    )
-}
+            </TouchableOpacity>
+        )
+    }
+)
 
 const styles = StyleSheet.create({
     container: {

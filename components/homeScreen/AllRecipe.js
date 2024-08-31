@@ -3,7 +3,6 @@ import RecipeCard from "./RecipeCard";
 import LoadingSpinner from "../../reusable/LoadingSpinner";
 import Error from "../../reusable/Error";
 const AllRecipe = ({recipe, loading, error}) => {
-    console.log("recipe", recipe)
     if(loading) return(
        <View style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
            <LoadingSpinner/>

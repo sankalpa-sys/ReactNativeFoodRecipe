@@ -1,4 +1,4 @@
-import {StyleSheet, AsyncStorage} from "react-native";
+import {StyleSheet} from "react-native";
 import {SafeAreaView} from "react-native-safe-area-context";
 import HomeHeader from "../components/homeScreen/HomeHeader";
 import HomeSearch from "../components/homeScreen/HomeSearch";
@@ -7,7 +7,6 @@ import AllRecipe from "../components/homeScreen/AllRecipe";
 import {useGetAllRecipe} from "../hooks/Recipe/useGetAllRecipee";
 import {useState} from "react";
 import useDebounce from "../hooks/useDebounce/useBounce";
-import {useSearchByCategory} from "../hooks/Recipe/useSearchByCategory";
 
 const HomeScreen = () => {
     const [searchQuery, setSearchQuery] = useState('');
@@ -24,18 +23,20 @@ const HomeScreen = () => {
     }
     return (
         <SafeAreaView style={container}>
-           <HomeHeader/>
-            <HomeSearch search={search} seachQuery={searchQuery}/>
-            <CategoriesSlider selectedCategory={selectedCategory} setCategoryHandler={setCategoryHandler}/>
-            <AllRecipe recipe={recipe} loading={loading} error={error}/>
-        </SafeAreaView>
+        <HomeHeader/>
+        <HomeSearch search={search} seachQuery={searchQuery}/>
+        <CategoriesSlider selectedCategory={selectedCategory} setCategoryHandler={setCategoryHandler}/>
+        <AllRecipe recipe={recipe} loading={loading} error={error}/>
+    </SafeAreaView>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 20,
+        paddingTop: 20,
+        paddingHorizontal: 20,
+        paddingBottom: 0
     },
 })
 
