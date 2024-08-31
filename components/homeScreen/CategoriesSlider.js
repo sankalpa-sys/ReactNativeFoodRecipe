@@ -1,30 +1,23 @@
-import {View, Text, StyleSheet, ScrollView, TouchableOpacity} from "react-native";
+import {View, Text, StyleSheet, ScrollView, TouchableOpacity, Image} from "react-native";
 import {useState} from "react";
+import {allCategories} from "../../data";
 
-const allCategories = [
-    {name: 'All', isActive: true},
-    {name: 'Breakfast', isActive: false},
-    {name: 'Lunch', isActive: false},
-    {name: 'Dinner', isActive: false},
-    {name: 'Snacks', isActive: false},
-    {name: 'Drinks', isActive: false},
-    {name: 'Desserts', isActive: false},
-]
-
-const CategoriesSlider = () => {
-    const [selectedCategory, setSelectedCategory] = useState('All')
-
+const CategoriesSlider = ({selectedCategory,setCategoryHandler}) => {
     const handleChangeActive = (category) => {
-        setSelectedCategory(category.name)
+        if(category.strCategory === selectedCategory) return setCategoryHandler('')
+        setCategoryHandler(category.strCategory)
     }
 
-    const {container, textContainer, categoryText, textContainerInActive, categoryTextInactive} = styles;
+    const {container, textContainer, categoryText, textContainerInActive, categoryTextInactive, s_categoryContainer} = styles;
     return (
         <View>
             <ScrollView horizontal showsHorizontalScrollIndicator={false} style={container}>
                 {allCategories.map((category, index) => (
-                    <TouchableOpacity key={index} onPress={()=>handleChangeActive(category)} style={category.name === selectedCategory ? textContainer: textContainerInActive}>
-                        <Text style={category.name === selectedCategory ? categoryText: categoryTextInactive} key={index}>{category.name}</Text>
+                    <TouchableOpacity key={index} onPress={()=>handleChangeActive(category)} style={category.strCategory === selectedCategory ? textContainer: textContainerInActive}>
+                        <View style={s_categoryContainer}>
+                            <Image style={styles.thumbnail} source={{uri: category.strCategoryThumb}}/>
+                            <Text style={category.strCategory === selectedCategory ? categoryText: categoryTextInactive} key={index}>{category.strCategory}</Text>
+                        </View>
                     </TouchableOpacity>
                 ))}
             </ScrollView>
@@ -40,13 +33,14 @@ const styles = StyleSheet.create({
     textContainer: {
         paddingVertical: 10,
         paddingHorizontal: 20,
-        backgroundColor: '#129575',
+        backgroundColor: '#DCDCDC',
         borderRadius: 10,
         marginHorizontal: 5,
     },
     categoryText: {
-        color: 'white',
-        fontWeight: 'bold',
+        color: 'black',
+        fontWeight: 400,
+        fontSize: 12,
     },
     textContainerInActive: {
         paddingVertical: 10,
@@ -56,8 +50,19 @@ const styles = StyleSheet.create({
         backgroundColor: '#F5F5F5',
     },
     categoryTextInactive: {
-        color: '#129575',
-        fontWeight: 'bold',
+        color: 'black',
+        fontWeight: 400,
+        fontSize: 12,
+    },
+    thumbnail: {
+        width: 50,
+        height: 50,
+        borderRadius: 10,
+        marginBottom: 5,
+        objectFit: 'cover',
+    },
+    s_categoryContainer: {
+        alignItems: 'center',
     }
 
 })
